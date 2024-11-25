@@ -78,31 +78,31 @@ $inputListBorder: $inputBorder;
 /// @group form
 $inputListPadding: .5rem 0;
 
-/// Padding for an individual itrem of an input list
+/// Padding for an individual item of an input list
 /// @group form
 $inputListItemPadding: .5rem 1rem;
 
-/// Background for an individual itrem of an input list
+/// Background for an individual item of an input list
 /// @group form
 $inputListItemBg: transparent;
 
-/// Text color for an individual itrem of an input list
+/// Text color for an individual item of an input list
 /// @group form
 $inputListItemTextColor: $textColor;
 
-/// Hover state background for an individual itrem of an input list
+/// Hover state background for an individual item of an input list
 /// @group form
 $inputListItemHoverBg: #e9ecef;
 
-/// Hover state text color for an individual itrem of an input list
+/// Hover state text color for an individual item of an input list
 /// @group form
 $inputListItemTextHoverColor: $textColor;
 
-/// Focus state background for an individual itrem of an input list
+/// Focus state background for an individual item of an input list
 /// @group form
 $inputListItemFocusBg: #f8f9fa;
 
-/// Focus state text color for an individual itrem of an input list
+/// Focus state text color for an individual item of an input list
 /// @group form
 $inputListItemTextFocusColor: $textColor;
 
@@ -562,3 +562,51 @@ $passwordMediumBg:#FFB300;
 /// Background of a strong password
 /// @group form
 $passwordStrongBg:#43A047;
+
+/// Background of select button
+/// @group form
+$selectButtonBg: $bgColorWhite;
+
+/// Border Color of select button
+/// @group form
+$selectButtonBorder: 1px solid $buttonPassive;
+
+/// Text color of select button
+/// @group form
+$selectButtonTextColor: $primaryTextColor;
+
+/// Background Color of hovered select button
+/// @group form
+$selectButtonHoverColor: $bgColorWhiteHover;
+
+/// Border Color of hovered select button
+/// @group form
+$selectButtonHoverBorderColor: $buttonPassiveHover;
+
+/// Text color of hovered select button
+/// @group form
+$selectButtonHoverTextColor: $primaryTextColor;
+
+/// Background Color of active select button
+/// @group form
+$selectButtonActiveBg: $buttonPositive;
+
+/// Border Color of active select button
+/// @group form
+$selectButtonActiveBorderColor: $borderPositive;
+
+/// Text color of active select button
+/// @group form
+$selectButtonTextActiveColor: $primaryTextColor;
+
+/// Background Color of hovered active select button
+/// @group form
+$selectButtonActiveHoverBg: $buttonPositiveHover;
+
+/// Border Color of hovered active select button
+/// @group form
+$selectButtonActiveHoverBorderColor: $borderPositiveHover;
+
+/// Text color of hovered active select button
+/// @group form
+$selectButtonTextActiveHoverColor: $primaryTextColor;

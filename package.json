@@ -22,6 +22,6 @@
         "url": "https://github.com/primefaces/primeng-sass-theme/issues"
     },
     "dependencies": {
-        "sass": "^1.80.6"
+        "sass": "^1.81.0"
     }
 }

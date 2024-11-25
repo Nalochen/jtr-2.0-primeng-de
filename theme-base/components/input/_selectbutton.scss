@@ -1,8 +1,8 @@
 .p-selectbutton {
     .p-button {
-        background: $toggleButtonBg;
-        border: $toggleButtonBorder;
-        color: $toggleButtonTextColor;
+        background: $selectButtonBg;
+        border: $selectButtonBorder;
+        color: $selectButtonTextColor;
         transition: $formElementTransition;
 
         .p-button-icon-left,
@@ -11,9 +11,9 @@
         }
 
         &:not(.p-disabled):not(.p-highlight):hover {
-            background: $toggleButtonHoverBg;
-            border-color: $toggleButtonHoverBorderColor;
-            color: $toggleButtonTextHoverColor;
+            background: $selectButtonHoverColor;
+            border-color: $selectButtonHoverBorderColor;
+            color: $selectButtonHoverTextColor;
 
             .p-button-icon-left,
             .p-button-icon-right {
@@ -22,9 +22,9 @@
         }
 
         &.p-highlight {
-            background: $toggleButtonActiveBg;
-            border-color: $toggleButtonActiveBorderColor;
-            color: $toggleButtonTextActiveColor;
+            background: $selectButtonActiveBg;
+            border-color: $selectButtonActiveBorderColor;
+            color: $selectButtonTextActiveColor;
 
             .p-button-icon-left,
             .p-button-icon-right {
@@ -32,9 +32,9 @@
             }
 
             &:hover {
-                background: $toggleButtonActiveHoverBg;
-                border-color: $toggleButtonActiveHoverBorderColor;
-                color: $toggleButtonTextActiveHoverColor;
+                background: $selectButtonActiveHoverBg;
+                border-color: $selectButtonActiveHoverBorderColor;
+                color: $selectButtonTextActiveHoverColor;
 
                 .p-button-icon-left,
                 .p-button-icon-right {
