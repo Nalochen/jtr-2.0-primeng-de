@@ -569,7 +569,7 @@ $selectButtonBg: $bgColorWhite;
 
 /// Border Color of select button
 /// @group form
-$selectButtonBorder: 1px solid $bgColorWhite;
+$selectButtonBorder: 1px solid $colorWhiteBorder;
 
 /// Text color of select button
 /// @group form
@@ -581,7 +581,7 @@ $selectButtonHoverColor: $bgColorWhiteHover;
 
 /// Border Color of hovered select button
 /// @group form
-$selectButtonHoverBorderColor: $buttonPassiveHover;
+$selectButtonHoverBorderColor: $colorWhiteHoverBorder;
 
 /// Text color of hovered select button
 /// @group form
