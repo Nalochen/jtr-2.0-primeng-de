@@ -1,0 +1,65 @@
+name: Publish Package to npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Extract branch name and timestamp
+        id: meta
+        run: |
+          BRANCH_NAME=$(echo "${{ github.event.release.target_commitish }}" | sed 's/\//-/g')
+
+          TIMESTAMP=$(date -u +'%Y%m%d%H%M%S')
+
+          PRERELEASE_TAG="$BRANCH_NAME-$TIMESTAMP"
+
+          echo "branch=$BRANCH_NAME" >> $GITHUB_ENV
+          echo "timestamp=$TIMESTAMP" >> $GITHUB_ENV
+          echo "prerelease_tag=$PRERELEASE_TAG" >> $GITHUB_ENV
+          echo "Prerelease tag: $PRERELEASE_TAG"
+
+      - name: Check branch
+        id: is_main
+        run: |
+          if [ "${{ github.event.release.target_commitish }}" == "main" ]; then
+            echo "is_main=true" >> $GITHUB_ENV
+          else
+            echo "is_main=false" >> $GITHUB_ENV
+          fi
+
+      - name: Update package.json version
+        if: env.is_main == 'false'
+        run: |
+          jq ".version |= . + \"-$PRERELEASE_TAG\"" package.json > package.tmp.json && mv package.tmp.json package.json
+          cat package.json
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ "${{ env.is_main }}" == "true" ]; then
+            echo "Publishing Stable Release..."
+          
+            npm publish
+          else
+            echo "Publishing Prerelease with tag $PRERELEASE_TAG..."
+            
+            npm publish --tag "$PRERELEASE_TAG"
+          fi
