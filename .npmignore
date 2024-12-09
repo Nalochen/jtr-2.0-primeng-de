@@ -1,0 +1,6 @@
+demo/**
+theme-base/**
+themes/**
+!themes/jtr-primeng-desktop.css
+.github/**
+.idea/**
